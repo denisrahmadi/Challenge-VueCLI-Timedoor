@@ -1,28 +1,98 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <app-header></app-header>
+    <main>
+      <div class="container">
+        <div class="title">
+          <h1>NOW SHOWING IN CINEMAS</h1>
+        </div>
+        <div class="movies">
+          <div class="movie-detail">
+            <img src="./assets/movie1.jpg" alt="Movie">
+            <p>INANG</p>
+          </div>
+          <div class="movie-detail">
+            <img src="./assets/movie2.jpg" alt="Movie">
+            <p>KALIAN PANTAS MATI</p>
+          </div>
+          <div class="movie-detail">
+            <img src="./assets/movie3.jpg" alt="Movie">
+            <p>HALLOWEEN ENDS</p>
+          </div>
+          <div class="movie-detail">
+            <img src="./assets/movie4.jpg" alt="Movie">
+            <p>PAMALI</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import HeaderMain from "./components/HeaderMain.vue";
+  import FooterMain from "./components/FooterMain.vue";
+  export default {
+    components: {
+      "app-header" : HeaderMain,
+      "app-footer" : FooterMain,
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  background-color: white;
+}
+
+.container {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+/* Header */
+
+
+
+/* Now Showing */
+.movies {
+  display: flex;
+  justify-content: center;
+}
+
+.movie-detail img {
+  border-radius: 20px;
+  width: 230px;
+  height: 350px;
+}
+
+.movie-detail {
+  margin: 7px;
+}
+
+.movie-detail p {
+  margin-top: 15px;
+  font-weight: 1000;
+}
+
+.title h1 {
+  font-size: 25px;
+}
+
+/* Footer */
+
 </style>
